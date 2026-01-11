@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te amo Betzabet</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+    }
+    .love {
+      position: absolute;
+      bottom: -50px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      animation: subir linear forwards;
+      white-space: nowrap;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    @keyframes subir {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  setInterval(() => {
+    const t = document.createElement("div");
+    t.className = "love";
+    t.innerText = "Te amo Betzabet ❤️";
+    t.style.left = Math.random() * 100 + "vw";
+    t.style.fontSize = (18 + Math.random() * 20) + "px";
+    t.style.animationDuration = (6 + Math.random() * 5) + "s";
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 12000);
+  }, 300);
+</script>
+
+</body>
+</html>
