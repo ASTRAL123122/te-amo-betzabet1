@@ -1,68 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Te amo Betzabet</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: linear-gradient(180deg, #ff9a9e, #fad0c4);
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>Te amo Betzabet</title>
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ff9a9e, #fad0c4);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
 
-    img {
-      margin-top: 30px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      z-index: 2;
-      position: relative;
-    }
+img {
+  margin-top: 30px;
+  width: 80%;
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 2;
+  position: relative;
+}
 
-    .love {
-      position: absolute;
-      bottom: -50px;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      animation: subir linear forwards;
-      white-space: nowrap;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      pointer-events: none;
-    }
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #ff5e78;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
-    @keyframes subir {
-      from { transform: translateY(0); opacity: 1; }
-      to { transform: translateY(-120vh); opacity: 0; }
-    }
-  </style>
+.love {
+  position: absolute;
+  bottom: -50px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  animation: subir linear forwards;
+  white-space: nowrap;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+
+@keyframes subir {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+</style>
 </head>
 <body>
 
-<!-- FOTO -->
-<img src="foto.png" alt="Nosotros">
+<img src="foto.jpg" alt="Nosotros">
 
-<!-- MUSICA -->
-<audio autoplay loop>
+<br>
+
+<button onclick="playMusic()">▶ Tocar música</button>
+
+<audio id="music" loop>
   <source src="arcoiris.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  setInterval(() => {
-    const t = document.createElement("div");
-    t.className = "love";
-    t.innerText = "Te amo Betzabet ❤️";
-    t.style.left = Math.random() * 100 + "vw";
-    t.style.fontSize = (18 + Math.random() * 20) + "px";
-    t.style.animationDuration = (6 + Math.random() * 6) + "s";
-    document.body.appendChild(t);
-    setTimeout(() => t.remove(), 14000);
-  }, 300);
+function playMusic() {
+  document.getElementById("music").play();
+}
+
+setInterval(() => {
+  const t = document.createElement("div");
+  t.className = "love";
+  t.innerText = "Te amo Betzabet ❤️";
+  t.style.left = Math.random() * 100 + "vw";
+  t.style.fontSize = (18 + Math.random() * 20) + "px";
+  t.style.animationDuration = (6 + Math.random() * 6) + "s";
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 14000);
+}, 300);
 </script>
 
 </body>
 </html>
-
